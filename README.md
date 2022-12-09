@@ -3,9 +3,6 @@
 
 Ironhack's Data Analytics Bootcamp Final Project
 
----
-***
----
 
 ## Overview
 For my final Ironhack project I chose to build a Web App that suggests recipes just because at the end of a very busy day the last thing we want is to decide what to cook! Right?
@@ -30,22 +27,20 @@ In this app we can input what we’ve already eaten and have a tasty easy-to-do 
 - Optical Character Recognition (OCR) - Google Vision API (text recognition from menu pictures);
 - Google translate.
 
----
 
 ## Web App Exemple
 
 **First Page**
-![home_page]((https://github.com/I'm_Hungry_web_app/Gifts/intro.gif)
+![home_page]((https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/Intro11.gif)
 
 
 **Profile**
-![profile_page](https://github.com/I'm_Hungry_web_app/Gifts/Profile.gif)
+![profile_page](https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/OCR.gif)
 
 
 **OCR**
-![ocr_page](https://github.com/I'm_Hungry_web_app/Gifts/OCR.gif)
+![ocr_page](https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/Profile.gif)
 
----
 
 ## Getting started
 
