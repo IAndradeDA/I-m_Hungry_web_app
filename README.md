@@ -31,7 +31,7 @@ In this app we can input what we’ve already eaten and have a tasty easy-to-do 
 ## Web App Exemple
 
 ### First Page
-![home_page]((https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/Intro11.gif)
+![home_page](https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/Intro11.gif)
 
 
 ### Profile
