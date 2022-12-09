@@ -30,15 +30,15 @@ In this app we can input what we’ve already eaten and have a tasty easy-to-do 
 
 ## Web App Exemple
 
-**First Page**
+### First Page
 ![home_page]((https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/Intro11.gif)
 
 
-**Profile**
+### Profile
 ![profile_page](https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/OCR.gif)
 
 
-**OCR**
+### OCR
 ![ocr_page](https://github.com/IAndradeDA/I-m_Hungry_web_app/blob/main/Gifs/Profile.gif)
 
 
