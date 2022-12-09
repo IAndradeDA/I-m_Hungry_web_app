@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{% block title %}OCR{% endblock%}
+
+
+{% block content %}
+
+<body>
+    <br>
+    <br>
+    <div class="center">
+        <h2> "Hi {{user|title}}, do you want the recipe of your favorite restaurant meal?"</h2>
+        <br>
+        <h1> I can give you an idea!</h1>
+    </div>
+    <br>
+    <div class="container">
+        <div class="form">
+            <div class="center">
+                <h3> Please, insert you picture bellow:</h3>
+                <br>
+                <div class="">
+                    <form action="" method="POST">
+                        <input type="file" name="image_name" />
+                        <input type="submit" class="btn" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if img %}
+    <div class="container">
+        <div class="form">
+
+            <div class="center">
+                <img src="/static/images/{{img}}" align="middle" class="image" />
+                <br>
+                <br>
+                <h3> Text Detected: </h3>
+                {{image_text}}
+            </div>
+            <br>
+            <br>
+            {% if recipe_response %}
+            <h3> You have this recipe(s) that could be related to that dish:</h3>
+            <br>
+            {%for recipe in recipe_response%}
+            <p> {{recipe | title}} </p>
+            {% endfor %}
+            {% for url in url_response %}
+            <br>
+            <a href={{url}} class="btn">View Recipe</a>
+            {% endfor %}
+            {% else %}
+            <h3> Sorry, I couldn't find any recipes for this text.</h3>
+            <h3> Please try again!</h3>
+            {% endif %}
+        </div>
+        {% endif %}
+</body>
+{% endblock %}

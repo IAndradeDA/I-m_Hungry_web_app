@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{% block title %}OCR{% endblock%}
+
+
+{% block content %}
+
+<body>
+    <div class="center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for msg in messages %}
+        <p>{{msg}}</p>
+        {% endfor %}
+        {% endif %}
+        {%endwith%}
+    </div>
+    <br>
+    <br>
+    <div class="center">
+        <h1> Hi {{user|title}}, here you can find your last searches! </h1>
+        <br>
+        <br>
+    </div>
+    <div id='chart' class='chart' ”>
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <script type='text/javascript'>
+            var graphs = {{ graphJSON | safe}};
+            Plotly.plot('chart', graphs, {});
+        </script>
+    </div>
+    <br>
+    <br>
+
+    <div class="container_tables">
+        <div class="form">
+            <h3> Food intake summary: </h3>
+            <div class="center">
+                {% for df1 in df_1 %}
+                {{ df1|safe }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <br>
+    <br>
+    <div class="container_tables">
+        <div class="form">
+            <h3> Recipes Suggested: </h3>
+            {% for df2 in df_2 %}
+            {{ df2|safe }}
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+
+{% endblock %}

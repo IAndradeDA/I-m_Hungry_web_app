@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% extends "base.html"%}
+    {% block title %}First_Page{% endblock%}
+    <title>Main_Page</title>
+
+</head>
+
+<body>
+    {% block content %}
+
+    <div class="parent">
+        <a href="{{url_for('ocr')}}" class="button_3">Take a PICTURE of your favorite restaurant dish to recipe!</a>
+    </div>
+
+    <div class="center">
+        <h1> "Hi {{user|title}}, do you need ideas for recipes?"</h1>
+    </div>
+
+    <!-- section for ssuggestions -->
+    <div class="parent">
+        <div class="child">
+            <div class="container">
+                <form class="form" action="" method="POST">
+                    <h2> Tell me what you've eaten today and </h2>
+                    <h2> I show you my suggestions: </h2>
+                    <br>
+                    <select name="gender" class="insert_profile">
+                        <option value="" class="grey">Select Gender</option>
+                        <option value="female">Female</option>"
+                        <option value="male">Male</option>"
+                    </select>
+                    <select name="specificities" class="insert_profile">
+                        <option value="" class="grey">Select Specificities</option>
+                        {% for label in spec_labels%}
+                        <option value="{{label}}">{{label| title}}</option>"
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <div class="form__group">
+                        <label for="Select_Food"></label>
+                        <select id="Select_Food" name="food_selec" data-dropdown required>
+                            <option value="">Please select food</option>
+                            {% for res in nut_food %}
+                            <option value="{{res}}" name="nut_food">{{res}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="text" name="qtt" placeholder="Quantity (g or ml)" class="insert" required />
+
+                    </div>
+                    <button type="submit" class="btn">Submit!</button>
+                    <a href="/remove_list" class="button">Reset List</a>
+                    <div class="qtt" method="POST">
+                    </div>
+                    <div class="result">
+                        <br>
+                        <br>
+                        <h3> Result:</h3>
+                        {% if food_list %}
+                        {% for fl in food_list %}
+                        <p>{{fl}}</p>
+                        {% endfor %}
+                        <h4>TOTAL INTAKE: {{tot_kcal}} kcal</h4>
+                        <h7> Recommended daily calorie intakes: 2,500 for men and 2,000 for
+                            women. </h7>
+                        {% endif %}
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="child">
+            <div class="container">
+                <div class="form">
+                    <div class="form__group">
+                        {% if Recipe %}
+                        <h2> I suggest the following recipe for </h2>
+                        <h2> your next main course:</h2>
+                        <br>
+                        <p> Recipe Name: </p>
+                        <h3> {{Recipe}} </h3>
+                        <h9> You still have a remain of: {{Left_kcal}} kcal to intake </h9>
+                        <br>
+                        <a href={{Url}} class="btn">View Recipe</a>
+                        <br>
+                        <br>
+                        <h3> Save in your profile: </h3>
+                        <a href="/save_info" class="btn">Save Recipe and Food list</a>
+
+                        {% endif %}
+                        {% if msg %}
+                        <p> Note: </p>
+                        <h3> {{msg}} </h3>
+                        {% endif %}
+                        <br>
+                        <br>
+                        <img src="/static/images/Dishes_photo_2.png" class="fst_image" align="middle" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="info"> -->
+    <div class="container">
+        <div class="form">
+            <div class="center">
+                <h2> Fast facts on calorie intake and use:</h2>
+            </div>
+            <br>
+            <p> * Recommended calorie intake depends on factors such as age, size, height, sex, lifestyle, and overall
+                general health.</p>
+            <p> * Recommended daily calorie intakes are around 2,500 for men and 2,000 for women.</p>
+            <p> * Eating a big breakfast could help with weight reduction and maintenance. </p>
+            <p> * The brain uses around 20 percent of the energy used in the human body.</p>
+            <p> * Factors affecting ideal calorific intake include age, bone density, and muscle-fat ratio.</p>
+            <p> * A 500-calorie meal consisting of fruits and vegetables has more health benefits and will keep you
+                feeling full for longer than a 500-calorie snack of pop. </p>
+        </div>
+    </div>
+
+
+    <!-- section for random recipes -->
+    <!-- <p> You only want ideas for yummy tasty and balanced food? </p>
+    <p> Click bellow for a random suggestion! </p>
+    
+    <div class="random_suggestions">
+        <form action="" method="post">
+            <label for="random_sugg">Random_Suggestions</label>
+            <input type="text" id="random_sugg" name="food_selec">
+            <button type="submit">run</button>
+        </form>
+    </div> -->
+    <!-- <div class="content">
+        <form action="" method="POST">
+            <select name=meal_type>
+                {% for reci in random_recipes %}
+                <option value="{{reci}}">{{reci}}</option>"
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-default">Go</button>
+        </form>
+    </div> -->
+    <!-- <div>
+        {% if food %}
+        <p>{{food}}</p>
+        {% endif %}
+    </div> -->
+
+
+
+
+
+    {% endblock %}
+
+
+
+</body>
+
+</html>

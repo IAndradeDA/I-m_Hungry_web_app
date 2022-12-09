@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% block title %}Login Page{% endblock%}
+
+
+{% block content %}
+
+<body>
+<br>
+<br>
+    <div class="container">
+        <form class="form" action="#" method="post">
+            <p>Enter your user name:</p>
+            <input type="text" name="nm" placeholder="Name" class="insert" required />
+            <p>Enter your email:</p>
+            <input type="email" name="email" placeholder="Email" class="insert" required />
+            <p>Password:</p>
+            <input type="password" name="pass" placeholder="Password" autocomplete="off" class="insert" required />
+            <input type="submit" value="submit" class="btn" />
+        </form>
+    </div>
+</body>
+{% endblock %}
